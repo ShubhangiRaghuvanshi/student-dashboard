@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AddStudentForm from './components/AddStudentForm';
 import StudentList from './components/StudentList';
 import Login from './components/Login';
-import { auth } from './firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+
 import { BookOpen, Filter, Loader, AlertCircle } from 'lucide-react';
 
 interface Student {
@@ -19,7 +18,7 @@ const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState('');
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+ 
 
   const courses = ['React', 'Node', 'JavaScript'];
 
@@ -106,15 +105,7 @@ const App: React.FC = () => {
           ))}
         </div>
 
-        {/* Error Alert */}
-        {error && (
-          <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded-lg shadow-md">
-            <div className="flex items-center">
-              <AlertCircle className="h-5 w-5 mr-2 text-red-500" />
-              <p>{error}</p>
-            </div>
-          </div>
-        )}
+       
 
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
