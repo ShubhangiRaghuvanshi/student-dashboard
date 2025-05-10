@@ -3,7 +3,7 @@ import AddStudentForm from './components/AddStudentForm';
 import StudentList from './components/StudentList';
 import Login from './components/Login';
 
-import { BookOpen, Filter, Loader, AlertCircle } from 'lucide-react';
+import { BookOpen, Filter, Loader} from 'lucide-react';
 
 interface Student {
   id: number;
