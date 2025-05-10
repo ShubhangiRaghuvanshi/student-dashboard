@@ -3,20 +3,20 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyACIBAnhCZDlkFIis1GRQEBvXt4fJGc1MM",
-  authDomain: "student-dashboard-7d41d.firebaseapp.com",
-  projectId: "student-dashboard-7d41d",
-  storageBucket: "student-dashboard-7d41d.firebasestorage.app",
-  messagingSenderId: "1033721671797",
-  appId: "1:1033721671797:web:80ae549d5180710f99083c",
-  measurementId: "G-MSP42M0FGG"
+  apiKey: import.meta.env.VITE_APP_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_APP_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 // Export the necessary Firebase services
 export const auth = getAuth(app);
