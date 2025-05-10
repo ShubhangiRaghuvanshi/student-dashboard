@@ -36,16 +36,7 @@ const App: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleLogin = async (email: string, password: string) => {
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      setUser(userCredential.user);
-      setIsAuthenticated(true);
-      setError('');
-    } catch {
-      setError('Login Failed. Please check your credentials.');
-    }
-  };
+
 
   const handleAddStudent = (student: Student) => {
     setStudents((prev) => [...prev, student]);
